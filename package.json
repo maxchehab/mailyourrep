@@ -6,11 +6,20 @@
     "start": "next start"
   },
   "dependencies": {
+    "evergreen-buttons": "^2.18.18",
+    "evergreen-colors": "^2.18.14",
+    "evergreen-layers": "^2.18.14",
+    "evergreen-text-input": "^2.18.18",
+    "evergreen-textarea": "^2.18.18",
+    "evergreen-typography": "^2.18.14",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.11.0",
     "next": "^4.1.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "ui-box": "^0.5.4"
   }
 }
