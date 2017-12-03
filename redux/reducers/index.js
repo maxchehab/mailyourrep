@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const letter = (state, action) => {
+const letter = (state = {}, action) => {
   switch (action.type) {
     default:
       return state;
