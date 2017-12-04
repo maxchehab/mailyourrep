@@ -1,53 +1,88 @@
 import Box from "ui-box";
-import { Heading, Label } from "evergreen-typography";
-import { TextInput } from "evergreen-text-input";
-import { Textarea } from "evergreen-textarea";
+import { Label, Heading } from "evergreen-typography";
+
 import { spacing, textSizes, colors } from "../theme";
 import Description from "./description";
 import glamorous from "glamorous";
 import { borderRadius } from "ui-box/lib/enhancers";
 import { Button } from "evergreen-buttons";
+import { letter } from "../redux/selectors";
+import { connect } from "react-redux";
+import { FormGroup, FormLabel, FormTextarea, FormTextInput } from "./forms";
+import {
+  setName,
+  setAddress,
+  setMessage,
+  sendLetter
+} from "../redux/actions/index";
 
-const FormLabel = props => (
-  <Label display="block" size={textSizes.regular} {...props} />
-);
+const value = event => event.target.value;
 
-const FormTextInput = props => <TextInput width={"100%"} {...props} />;
+const mapStateToProps = state => {
+  return letter(state);
+};
 
-const FormTextarea = props => <Textarea width={"100%"} {...props} />;
+const mapDispatchToProps = dispatch => {
+  return {
+    changeName: e => dispatch(setName(value(e))),
+    changeAddress: e => dispatch(setAddress(value(e))),
+    changeMessage: e => dispatch(setMessage(value(e))),
+    sendLetter: () => dispatch(sendLetter())
+  };
+};
 
-const FormGroup = props => <Box marginTop={spacing.small} {...props} />;
+export default connect(mapStateToProps, mapDispatchToProps)(
+  ({
+    name,
+    address,
+    message,
+    changeName,
+    changeAddress,
+    changeMessage,
+    sendLetter
+  }) => (
+    <Box>
+      <Heading size={textSizes.large}>Let's send a letter</Heading>
 
-export default () => (
-  <Box>
-    <Heading size={textSizes.large}>Let's send a letter</Heading>
+      <FormGroup>
+        <FormLabel htmlFor={"address"}>Mailing Address</FormLabel>
+        <Description>
+          We'll use this to look up your representative in Congress.
+        </Description>
+        <FormTextInput
+          id={"address"}
+          placeholder={"1600 Pennsylvania Ave NW, Washington, DC"}
+          value={address}
+          onChange={changeAddress}
+        />
+      </FormGroup>
 
-    <FormGroup>
-      <FormLabel htmlFor={"address"}>Mailing Address</FormLabel>
-      <Description>
-        We'll use this to look up your representative in Congress.
-      </Description>
-      <FormTextInput
-        id={"address"}
-        placeholder={"1600 Pennsylvania Ave NW, Washington, DC"}
-      />
-    </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor={"name"}>Your Name</FormLabel>
+        <FormTextInput
+          id={"name"}
+          placeholder={"Ada Lovelace"}
+          value={name}
+          onChange={changeName}
+        />
+      </FormGroup>
 
-    <FormGroup>
-      <FormLabel htmlFor={"name"}>Your Name</FormLabel>
-      <FormTextInput id={"name"} placeholder={"Ada Lovelace"} />
-    </FormGroup>
+      <FormGroup>
+        <FormLabel htmlFor={"letter"}>Write your letter!</FormLabel>
+        <Description>
+          Feel to leave the page, we'll save your progress.
+        </Description>
+        <FormTextarea
+          id={"letter"}
+          placeholder={"I'm writing to ask you to..."}
+          value={message}
+          onChange={changeMessage}
+        />
+      </FormGroup>
 
-    <FormGroup>
-      <FormLabel htmlFor={"letter"}>Write your letter!</FormLabel>
-      <FormTextarea
-        id={"letter"}
-        placeholder={"I'm writing to ask you to..."}
-      />
-    </FormGroup>
-
-    <FormGroup>
-      <Button>{"Send!"}</Button>
-    </FormGroup>
-  </Box>
+      <FormGroup>
+        <Button onClick={sendLetter}>{"Send!"}</Button>
+      </FormGroup>
+    </Box>
+  )
 );
