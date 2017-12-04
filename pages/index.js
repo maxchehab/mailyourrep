@@ -8,6 +8,7 @@ import { colors, spacing } from "../theme";
 import glamorous, { Div } from "glamorous";
 import App from "../components/app";
 import Pattern from "../components/pattern";
+import evergreen from "evergreen-colors";
 
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls
@@ -39,7 +40,7 @@ const Angles = glamorous.div({
   position: "absolute",
   background: "#016cd1",
   zIndex: 0,
-  transformOrigin: 0
+  transformOrigin: -200
 });
 
 const store = initStore();
@@ -51,11 +52,11 @@ export default class extends React.Component {
         <Div
           display={"flex"}
           justifyContent={"center"}
-          alignItems={"center"}
           height={"100%"}
           background={"016cd1"}
+          overflow="scroll"
         >
-          <Pattern
+          {/* <Pattern
             style={{
               width: "100%",
               height: "100%",
@@ -64,26 +65,39 @@ export default class extends React.Component {
               zIndex: 0,
               transformOrigin: 0
             }}
-          />
+          /> */}
 
           <Angles
             style={{
               transform: "skewY(-25deg)",
 
-              background: "rgba(1,108,209,0.544)"
+              background: evergreen.blue["200"]
             }}
           />
           <Angles
             style={{
               transform: "skewY(-35deg)",
-              background: "rgba(1,108,209,0.653)"
+              background: evergreen.blue["300"]
+            }}
+          />
+
+          <Angles
+            style={{
+              transform: "skewY(-50deg)",
+
+              background: evergreen.blue["400"]
+            }}
+          />
+          <Angles
+            style={{
+              transform: "skewY(-70deg)",
+              background: evergreen.blue["200A"]
             }}
           />
 
           <Div position="relative">
             <Div
               display={"flex"}
-              justifyContent={"center"}
               padding={spacing.regular}
               zIndex={1}
               position={"relative"}

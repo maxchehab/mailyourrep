@@ -1780,6 +1780,16 @@ evergreen-shared-styles@^2.18.18:
     evergreen-typography "^2.18.14"
     ui-box "^0.5.4"
 
+evergreen-tabs@^2.18.18:
+  version "2.18.18"
+  resolved "https://registry.yarnpkg.com/evergreen-tabs/-/evergreen-tabs-2.18.18.tgz#9fb67bb42bf1a0647df87a6f67e43b70af8835af"
+  dependencies:
+    evergreen-icons "^2.18.14"
+    evergreen-shared-styles "^2.18.18"
+    evergreen-typography "^2.18.14"
+    prop-types "^15.0.0"
+    ui-box "^0.5.4"
+
 evergreen-text-input@^2.18.18:
   version "2.18.18"
   resolved "https://registry.yarnpkg.com/evergreen-text-input/-/evergreen-text-input-2.18.18.tgz#99889704c99cda2ae1bc425795c559bea5f4ccd4"
