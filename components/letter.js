@@ -13,7 +13,8 @@ import {
   setName,
   setAddress,
   setMessage,
-  sendLetter
+  sendLetter,
+  lookupReps
 } from "../redux/actions/index";
 
 const value = event => event.target.value;
@@ -27,7 +28,8 @@ const mapDispatchToProps = dispatch => {
     changeName: e => dispatch(setName(value(e))),
     changeAddress: e => dispatch(setAddress(value(e))),
     changeMessage: e => dispatch(setMessage(value(e))),
-    sendLetter: () => dispatch(sendLetter())
+    sendLetter: () => dispatch(sendLetter()),
+    lookupReps: () => dispatch(lookupReps())
   };
 };
 
@@ -39,7 +41,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     changeName,
     changeAddress,
     changeMessage,
-    sendLetter
+    sendLetter,
+    lookupReps
   }) => (
     <Box>
       <Heading size={textSizes.large}>Let's send a letter</Heading>
@@ -54,6 +57,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           placeholder={"1600 Pennsylvania Ave NW, Washington, DC"}
           value={address}
           onChange={changeAddress}
+          onBlur={lookupReps}
         />
       </FormGroup>
 
@@ -81,7 +85,9 @@ export default connect(mapStateToProps, mapDispatchToProps)(
       </FormGroup>
 
       <FormGroup>
-        <Button onClick={sendLetter}>{"Send!"}</Button>
+        <Button onClick={sendLetter} disabled={!(name && message && address)}>
+          {"Send!"}
+        </Button>
       </FormGroup>
     </Box>
   )
