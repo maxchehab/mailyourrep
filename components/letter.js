@@ -45,7 +45,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     lookupReps
   }) => (
     <Box>
-      <Heading size={textSizes.large}>Let's send a letter</Heading>
+      <Heading size={textSizes.large}>Send a letter</Heading>
 
       <FormGroup>
         <FormLabel htmlFor={"address"}>Mailing Address</FormLabel>

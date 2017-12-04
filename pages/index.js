@@ -88,7 +88,7 @@ export default class extends React.Component {
               zIndex={1}
               position={"relative"}
             >
-              <Div maxWidth={"900px"}>
+              <Div maxWidth={"700px"}>
                 <Head title="Home" />
                 <App />
               </Div>
