@@ -10,7 +10,6 @@ const TabLink = props => (
 
 export const pages = {
   INDEX: "INDEX",
-  ABOUT: "ABOUT",
   FAQ: "FAQ"
 };
 
@@ -20,9 +19,6 @@ export const Navigation = ({ selected }) => {
       <TabNavigation>
         <TabLink isSelected={selected === pages.INDEX} href="/">
           Home
-        </TabLink>
-        <TabLink isSelected={selected === pages.ABOUT} href="/about">
-          About
         </TabLink>
         <TabLink isSelected={selected === pages.FAQ} href="/faq">
           FAQ

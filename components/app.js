@@ -8,7 +8,7 @@ import { P, Section } from "./ui";
 import CardContainer from "./CardContainer";
 
 export default () => (
-  <CardContainer>
+  <CardContainer page={pages.INDEX}>
     <Section>
       <Heading size={textSizes.large}>Hi 👋🏻 Welcome to MailYourRep. </Heading>
 
