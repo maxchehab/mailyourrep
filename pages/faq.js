@@ -3,7 +3,7 @@ import { initStore } from "../redux/store";
 import { rehydrate } from "glamor";
 import Angles from "../components/angles";
 import Head from "../components/head";
-import App from "../components/app";
+import FAQ from "../components/faq";
 
 // Adds server generated styles to glamor cache.
 // Has to run before any `style()` calls
@@ -19,8 +19,8 @@ export default class extends React.Component {
     return (
       <Provider store={store}>
         <Angles>
-          <Head title="Home" />
-          <App />
+          <Head title="FAQ" />
+          <FAQ />
         </Angles>
       </Provider>
     );

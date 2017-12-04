@@ -81,6 +81,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           placeholder={"I'm writing to ask you to..."}
           value={message}
           onChange={changeMessage}
+          style={{ resize: "none" }}
         />
       </FormGroup>
 

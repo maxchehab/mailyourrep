@@ -26,5 +26,9 @@
     "redux-persist-cookie-storage": "^0.4.0",
     "redux-thunk": "^2.2.0",
     "ui-box": "^0.5.4"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1",
+    "eslint-plugin-react": "^7.5.1"
   }
 }

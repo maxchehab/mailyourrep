@@ -17,7 +17,7 @@ export const textSizes = {
 
 export const colors = {
   border: evergreen.neutral["40A"],
-  darkBackground: evergreen.neutral["7"],
+  darkBackground: evergreen.blue["3"],
   lightBackground: "white"
 };
 
