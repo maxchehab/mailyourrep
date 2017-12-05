@@ -17,8 +17,13 @@ export const textSizes = {
 
 export const colors = {
   border: evergreen.neutral["40A"],
-  darkBackground: evergreen.blue["3"],
+  darkBackground: evergreen.neutral["5"],
+  extraDarkBackground: evergreen.neutral["100"],
   lightBackground: "white"
+};
+
+export const textColors = {
+  extraDark: evergreen.neutral["1000"]
 };
 
 export const angleColors = {

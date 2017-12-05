@@ -5,7 +5,8 @@ export const lookup = address => {
 
   return got(
     "https://www.googleapis.com/civicinfo/v2/representatives?key=AIzaSyAJeOUUNN_QwQNUwuj1nK2WkywtIL2EQ5s&address=" +
-      address
+      address +
+      "&levels=country"
   )
     .then(response => {
       const json = JSON.parse(response.body);

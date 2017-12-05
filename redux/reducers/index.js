@@ -1,5 +1,11 @@
 import { combineReducers } from "redux";
-import { SET_NAME, SET_ADDRESS, SET_MESSAGE, CLEAR_LETTER } from "../actions";
+import {
+  SET_NAME,
+  SET_ADDRESS,
+  SET_MESSAGE,
+  CLEAR_LETTER,
+  SET_REPS
+} from "../actions";
 
 const initialState = {};
 
@@ -16,6 +22,10 @@ const letter = (state = initialState, action) => {
     case SET_MESSAGE:
       return Object.assign({}, state, {
         message: action.message
+      });
+    case SET_REPS:
+      return Object.assign({}, state, {
+        reps: action.reps
       });
     case CLEAR_LETTER:
       return Object.assign({}, initialState);

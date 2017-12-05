@@ -16,6 +16,7 @@ import {
   sendLetter,
   lookupReps
 } from "../redux/actions/index";
+import Reps from "./reps";
 
 const value = event => event.target.value;
 
@@ -38,6 +39,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
     name,
     address,
     message,
+    reps,
     changeName,
     changeAddress,
     changeMessage,
@@ -50,7 +52,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(
       <FormGroup>
         <FormLabel htmlFor={"address"}>Mailing Address</FormLabel>
         <Description>
-          We'll use this to look up your representative in Congress.
+          We'll use this to look up your representative.
         </Description>
         <FormTextInput
           id={"address"}
@@ -59,6 +61,14 @@ export default connect(mapStateToProps, mapDispatchToProps)(
           onChange={changeAddress}
           onBlur={lookupReps}
         />
+      </FormGroup>
+
+      <FormGroup>
+        <FormLabel>Representatives</FormLabel>
+        <Description>
+          We pick these members based on your congressional district.
+        </Description>
+        <Reps reps={reps} />
       </FormGroup>
 
       <FormGroup>

@@ -1912,6 +1912,14 @@ evergreen-buttons@^2.18.18:
     evergreen-typography "^2.18.14"
     ui-box "^0.5.4"
 
+evergreen-checkbox@^2.18.18:
+  version "2.18.18"
+  resolved "https://registry.yarnpkg.com/evergreen-checkbox/-/evergreen-checkbox-2.18.18.tgz#8d52dc4a55efb67ee561d716ea23c718ece537ce"
+  dependencies:
+    evergreen-colors "^2.18.14"
+    evergreen-shared-styles "^2.18.18"
+    ui-box "^0.5.4"
+
 evergreen-colors@^2.18.14:
   version "2.18.14"
   resolved "https://registry.yarnpkg.com/evergreen-colors/-/evergreen-colors-2.18.14.tgz#0c4fab619733f902d0d2f62571cbc9352ecc5333"
